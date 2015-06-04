@@ -1,0 +1,14 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+	  <LinearLayout 
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content">
+	      <View
+       android:id="@+id/sm_place_holder"
+       android:layout_width="0dp"
+       android:layout_weight="1000"
+       android:background="@android:color/transparent"
+       android:layout_height="wrap_content" >
+       </View> 
+	      </LinearLayout>
+	  
+</merge>
