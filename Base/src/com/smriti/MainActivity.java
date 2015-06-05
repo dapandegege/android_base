@@ -34,7 +34,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements RunnableListener, RunnableLauncher,OnTouchListener {
 	
 	ImageViewLL imageHolder ;
-	
+	int coutn = 0;
 	RunnableManager runnableManager;
 	TextView senderTextView;
 	
@@ -78,6 +78,8 @@ public class MainActivity extends Activity implements RunnableListener, Runnable
 			
 			ImageDown imageDonw = new ImageDown(this, this);		
 			runnableManager.execute(imageDonw);
+			imageDonw = new ImageDown(this, this);		
+			runnableManager.execute(imageDonw);
 
 		return true;
 	}
@@ -110,11 +112,16 @@ public class MainActivity extends Activity implements RunnableListener, Runnable
 	public void setLooper(Looper looper) {
 		// TODO Auto-generated method stub
 		
+		if (handler!= null) {
+			return;
+		}
 		handler = new Handler(looper){
 			@Override
 			public void handleMessage(Message message) {
+				
+				
 	        	
-				Log.w("Base",  "" + message.obj);
+				Log.w("Base",  "" + message.obj +"count =" + coutn++);
 				
 	        	if (message.arg1 == 200) {
 	        		if (message.obj.getClass().equals(Bitmap.class)) {
