@@ -4,6 +4,7 @@ package com.smriti.utilites;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.baidu.mapapi.utils.e;
 
 import junit.framework.Assert;
 import android.text.Editable;
